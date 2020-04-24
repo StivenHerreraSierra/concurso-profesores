@@ -82,7 +82,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		setVisible(true);
 		setLayout(new BorderLayout());
 		this.setSize(new Dimension (400, 300));
-		this.setResizable(false);
+		this.setResizable(true);
 		this.setTitle("Seleccion Idioma");
 		ventanaSeleccionIdioma = new VentanaSeleccionIdioma (this);
 		this.add(ventanaSeleccionIdioma);
@@ -134,7 +134,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 //			System.out.println(b);
 //		}
 		miVentanaTodosLosDocentes1.getLista().
-		setListData(miConcursoProfesor.generarListado());
+		setListData(miConcursoProfesor.generarListado
+				(ventanaSeleccionIdioma.getTextoMensaje("Etiqueta_Label_Cedula")));
 	}
 	
 	public ConcursoProfesor getMiConcursoProfesor() {

@@ -2,21 +2,13 @@ package co.uniquindio.lenguaje.concurso.view;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
 import java.awt.Font;
-import java.awt.Insets;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ResourceBundle;
 import java.util.Locale;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import javax.swing.BoxLayout;
 
 public class VentanaSeleccionIdioma extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;

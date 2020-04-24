@@ -85,7 +85,7 @@ public class ConcursoProfesor implements Serializable {
 	 * 
 	 * @return un array de string con la informacion de los docentes
 	 */
-	public String[] generarListadoPorPuntaje() {
+	public String[] generarListadoPorPuntaje (String idiomaCedula) {
 		String info[] = new String[miProfesor.size()];
 
 		for (int i = 0; i < miProfesor.size(); i++) {
@@ -99,7 +99,8 @@ public class ConcursoProfesor implements Serializable {
 			}
 		}
 		for (int i = 0; i < miProfesor.size(); i++) {
-			info[i] = miProfesor.get(i).getNombre() + " " + miProfesor.get(i).getApellido() + " Cedula:"
+			info[i] = miProfesor.get(i).getNombre() + " " + miProfesor.get(i).getApellido()
+					+ " " + idiomaCedula + ": "
 					+ miProfesor.get(i).getCedula();
 
 		}
@@ -111,10 +112,11 @@ public class ConcursoProfesor implements Serializable {
 	 * Permite generar el listado de los docentes
 	 * @return un array de String
 	 */
-	public String[] generarListado() {
+	public String[] generarListado(String idiomaCedula) {
 		String info[] = new String[miProfesor.size()];
 		for (int i = 0; i < miProfesor.size(); i++) {
-			info[i] = miProfesor.get(i).getNombre() + "  " + miProfesor.get(i).getApellido() + " Cedula:"
+			info[i] = miProfesor.get(i).getNombre() + "  " + miProfesor.get(i).getApellido()
+					+ " " + idiomaCedula + ":"
 					+ miProfesor.get(i).getCedula();
 		}
 		return info;
@@ -142,7 +144,7 @@ public class ConcursoProfesor implements Serializable {
 	 * 
 	 * @return un array con la informacion de los docentes
 	 */
-	public String[] generarListadoOrdenadoPorNombre() {
+	public String[] generarListadoOrdenadoPorNombre (String idiomaCedula) {
 		String info[] = new String[miProfesor.size()];
 
 		for (int i = 0; i < miProfesor.size(); i++) {
@@ -158,7 +160,8 @@ public class ConcursoProfesor implements Serializable {
 			}
 		}
 		for (int i = 0; i < miProfesor.size(); i++) {
-			info[i] = miProfesor.get(i).getNombre() + " " + miProfesor.get(i).getApellido() + " Cedula:"
+			info[i] = miProfesor.get(i).getNombre() + " " + miProfesor.get(i).getApellido()
+					+ " " + idiomaCedula + ":"
 					+ miProfesor.get(i).getCedula();
 		}
 		return info;

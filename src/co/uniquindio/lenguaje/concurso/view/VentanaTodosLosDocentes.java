@@ -121,13 +121,15 @@ public class VentanaTodosLosDocentes extends JPanel implements ActionListener, L
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == todos) {
-			lista.setListData(miVentana.getMiConcursoProfesor().generarListadoOrdenadoPorNombre());
+			lista.setListData(miVentana.getMiConcursoProfesor().
+					generarListadoOrdenadoPorNombre(idioma.getTextoMensaje("Etiqueta_Label_Cedula")));
 
 		}
 
 		if (e.getSource() == puntaje) {
 
-			lista.setListData(miVentana.getMiConcursoProfesor().generarListadoPorPuntaje());
+			lista.setListData(miVentana.getMiConcursoProfesor().
+					generarListadoPorPuntaje(idioma.getTextoMensaje("Etiqueta_Label_Cedula")));
 
 		}
 

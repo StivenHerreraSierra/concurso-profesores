@@ -325,9 +325,10 @@ public class VentanaAgregarProfesor extends javax.swing.JPanel implements Action
 			 if (!miVentanaPrincipal.getMiConcursoProfesor().agregarParticipante(miCedula.getText(),
 					 nombre.getText(), apellido.getText(), imagen, pregrado1, especializacion1, maestria1,
 					 doctorado1, cantidadLibros1)) {
-				 JOptionPane.showMessageDialog(null, "La cedula del docente ya existe en el sistema");
+				 JOptionPane.showMessageDialog(null, idioma.getTextoMensaje("Etiqueta_Mensaje_Existente"));
 			 } else {
-				 String[] a = miVentanaPrincipal.getMiConcursoProfesor().generarListado();
+				 String[] a = miVentanaPrincipal.getMiConcursoProfesor().
+						 generarListado(idioma.getTextoMensaje("Etiqueta_Label_Cedula"));
 					for (String b: a) {
 						System.out.println(b);
 					}
