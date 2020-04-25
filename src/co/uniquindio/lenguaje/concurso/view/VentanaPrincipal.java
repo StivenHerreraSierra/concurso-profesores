@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+
+import co.uniquindio.lenguaje.concurso.persistencia.Persistencia;
 import co.uniquindio.lenguaje.concurso.view.VentanaSeleccionIdioma;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -153,7 +155,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		try {
 			File archivo = new File (rutaBin);
 			if (archivo.exists() == true) {
-				miConcursoProfesor = miConcursoProfesor.cargarArchivoBin(rutaBin);
+				miConcursoProfesor = (ConcursoProfesor)
+						Persistencia.deserializar(rutaBin);
 			}
 		} catch (IOException|ClassNotFoundException e) {
 			System.out.println(e.getMessage());
@@ -162,7 +165,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	
 	public void guardarArchivoBin () {
 		try {
-			miConcursoProfesor.guardarArchivoBin(rutaBin);
+			Persistencia.serializar(rutaBin, miConcursoProfesor);
 		} catch (IOException|ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 		}

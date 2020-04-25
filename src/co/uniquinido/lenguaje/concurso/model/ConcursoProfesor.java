@@ -166,16 +166,4 @@ public class ConcursoProfesor implements Serializable {
 		}
 		return info;
 	}
-	
-	public ConcursoProfesor cargarArchivoBin (String ruta)
-			throws IOException, ClassNotFoundException {
-		ConcursoProfesor miConcurso = (ConcursoProfesor) 
-				Persistencia.deserializar (ruta);
-		return miConcurso;
-	}
-	
-	public void guardarArchivoBin (String ruta)
-			throws IOException, ClassNotFoundException {
-		Persistencia.serializar(ruta, this);
-	}
 }
